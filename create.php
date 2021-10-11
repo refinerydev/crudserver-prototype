@@ -16,7 +16,7 @@ if ($picture_file != "") {
   if (in_array($extension, $allowed) === true) {
     move_uploaded_file($file_tmp, 'images/' . $filename);
 
-    $query = "INSERT INTO notes (IDPEL, description, FOTO) VALUES ('$title', '$description', '$filename')";
+    $query = "INSERT INTO m_pemutusan (IDPEL, description, FOTO) VALUES ('$title', '$description', '$filename')";
     $result = mysqli_query($conn, $query);
 
     if (!$result) {
@@ -31,7 +31,7 @@ if ($picture_file != "") {
     echo "invalid extension";
   }
 } else {
-  $query = "INSERT INTO notes (title, description, picture_file) VALUES ('$title', '$description', null)";
+  $query = "INSERT INTO m_pemutusan (title, description, picture_file) VALUES ('$title', '$description', null)";
   $result = mysqli_query($conn, $query);
 
   if (!$result) {
