@@ -1,0 +1,24 @@
+[
+    {
+      "id":  1,
+      "title": "tes",
+      "category": "daily",
+      "idpel": 1,
+      "namapel": "x"
+    },
+    {
+      "id":  2,
+      "title": "tes",
+      "category": "daily",
+      "idpel": 1,
+      "namapel": "x"
+    },
+    {
+      "id":  3,
+      "title": "tes",
+      "category": "weekly",
+      "idpel": 1,
+      "namapel": "x"
+    }
+
+]
