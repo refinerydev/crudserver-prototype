@@ -32,7 +32,7 @@ if ($picture_file != "") {
     echo "invalid extension";
   }
 } else {
-  $query = "INSERT INTO notes (picture_file) VALUES (null)";
+  $query = "INSERT INTO m_pemutusan (picture_file) VALUES (null)";
   $result = mysqli_query($conn, $query);
 
   if (!$result) {
