@@ -2,8 +2,7 @@
 include 'conn.php';
 header('Access-Control-Allow-Origin: *');
 
-$title   = $_POST['title'];
-$description     = $_POST['description'];
+$title   = $_POST['idpel'];
 $picture_file = $_FILES['picture_file']['name'];
 
 if ($picture_file != "") {
