@@ -1,5 +1,5 @@
 <?php
-$host = "tusbung.informasi-digital.info";
+$host = "informasi-digital.info";
 $user = "u8712480_hpazk";
 $pass = "Vmondev123@";
 $dbname = "u8712480_dev_vehicle_monitor"; //nama database
