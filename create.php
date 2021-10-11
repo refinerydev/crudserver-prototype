@@ -2,7 +2,8 @@
 include 'conn.php';
 header('Access-Control-Allow-Origin: *');
 
-$title   = $_POST['idpel'];
+$lat   = $_POST['lat'];
+$long   = $_POST['long'];
 $picture_file = $_FILES['picture_file']['name'];
 
 if ($picture_file != "") {
@@ -16,7 +17,7 @@ if ($picture_file != "") {
   if (in_array($extension, $allowed) === true) {
     move_uploaded_file($file_tmp, 'images/' . $filename);
 
-    $query = "INSERT INTO m_pemutusan (IDPEL, FOTO) VALUES ('$title', '$filename')";
+    $query = "INSERT INTO m_pemutusan (FOTO, KOORDINAT_X, KOORDINAT_Y) VALUES ('$filename', '$lat', '$long')";
     $result = mysqli_query($conn, $query);
 
     if (!$result) {
@@ -31,7 +32,7 @@ if ($picture_file != "") {
     echo "invalid extension";
   }
 } else {
-  $query = "INSERT INTO m_pemutusan (IDPEL, picture_file) VALUES ('$title', null)";
+  $query = "INSERT INTO m_pemutusan (FOTO, KOORDINAT_X, KOORDINAT_Y) VALUES (null, '$lat', '$long')";
   $result = mysqli_query($conn, $query);
 
   if (!$result) {
