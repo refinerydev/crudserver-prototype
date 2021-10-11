@@ -22,7 +22,7 @@ function getData($c, $cat)
 }
 
 for ($i = 0; $i < count($cat); $i++) {
-  $cat[$i]['data'] = getData($conn, $cat[$i]['KDDK']);
+  $cat[$i]['DATA'] = getData($conn, $cat[$i]['KDDK']);
 }
 
 echo json_encode($cat);
