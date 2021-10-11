@@ -1,8 +1,8 @@
 <?php
 $host = "localhost";
-$user = "root";
-$pass = "root";
-$dbname = "crudserver"; //nama database
+$user = "u8712480_hpazk";
+$pass = "Vmondev123@";
+$dbname = "u8712480_dev_vehicle_monitor"; //nama database
 $conn = mysqli_connect($host, $user, $pass, $dbname); //pastikan urutan nya seperti ini, jangan tertukar
 
 if (!$conn) { //jika tidak terkoneksi maka akan tampil error
