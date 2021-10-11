@@ -1,8 +1,8 @@
 <?php
-$host = "informasi-digital.info";
+$host = "localhost";
 $user = "u8712480_hpazk";
 $pass = "Vmondev123@";
-$dbname = "u8712480_dev_vehicle_monitor"; //nama database
+$dbname = "u8712480_tusbung"; //nama database
 $conn = mysqli_connect($host, $user, $pass, $dbname); //pastikan urutan nya seperti ini, jangan tertukar
 
 if (!$conn) { //jika tidak terkoneksi maka akan tampil error
