@@ -19,7 +19,7 @@ function getData($c, $cat)
     $result[] = $row;
   }
   if ($result < 1) {
-    return 0;
+    return array();
   }
   return $result;
 }
