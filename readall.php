@@ -16,7 +16,7 @@ function getData($c, $cat)
 {
   $query = mysqli_query($c, 'SELECT * FROM m_pemutusan_wo WHERE FLAG = "0" AND KDDK = "' . $cat . '"');
   while ($row = mysqli_fetch_assoc($query)) {
-    if ($row == null) {
+    if ($row < 1) {
       return 0;
     }
     $result[] = $row;
