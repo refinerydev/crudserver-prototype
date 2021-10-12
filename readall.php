@@ -14,7 +14,7 @@ while ($row_cat = mysqli_fetch_assoc($category)) {
 
 function getData($c, $cat)
 {
-  $query = mysqli_query($c, 'SELECT * FROM m_pemutusan_wo WHERE KDDK = "' . $cat . '"');
+  $query = mysqli_query($c, 'SELECT * FROM m_pemutusan_wo WHERE KDDK = "' . $cat . ' AND FLAG = 0"');
   while ($row = mysqli_fetch_assoc($query)) {
     $result[] = $row;
   }
