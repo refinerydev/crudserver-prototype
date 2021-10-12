@@ -26,6 +26,15 @@ if ($picture_file != "") {
       die(mysqli_errno($conn) .
         " - " . mysqli_error($conn));
     } else {
+      $qupdate = "UPDATE m_pemutusan_wo SET FLAG='1' WHERE IDPEL=" . $idpel . "";
+      $hsil = mysqli_query($conn, $qupdate);
+
+      if (!$result) {
+        die(mysqli_errno($conn) .
+          " - " . mysqli_error($conn));
+      } else {
+        echo "gagal update flag";
+      }
 
       echo "success";
     }
@@ -42,7 +51,15 @@ if ($picture_file != "") {
     die(mysqli_errno($conn) .
       " - " . mysqli_error($conn));
   } else {
+    $qupdate = "UPDATE m_pemutusan_wo SET FLAG='1' WHERE IDPEL=" . $idpel . "";
+    $hsil = mysqli_query($conn, $qupdate);
 
+    if (!$result) {
+      die(mysqli_errno($conn) .
+        " - " . mysqli_error($conn));
+    } else {
+      echo "gagal update flag";
+    }
     echo "success";
   }
 }
