@@ -6,6 +6,7 @@ $lat   = $_POST['lat'];
 $long   = $_POST['long'];
 $unitupi   = $_POST['unitupi'];
 $idpel   = $_POST['idpel'];
+$status   = $_POST['status'];
 $picture_file = $_FILES['picture_file']['name'];
 
 if ($picture_file != "") {
@@ -19,7 +20,7 @@ if ($picture_file != "") {
   if (in_array($extension, $allowed) === true) {
     move_uploaded_file($file_tmp, 'images/' . $filename);
 
-    $query = "INSERT INTO m_pemutusan (UNITUPI, IDPEL, FOTO, KOORDINAT_X, KOORDINAT_Y) VALUES ('$unitupi', '$idpel', '$filename', '$lat', '$long')";
+    $query = "INSERT INTO m_pemutusan (UNITUPI, IDPEL, FOTO, KOORDINAT_X, KOORDINAT_Y, STATUS) VALUES ('$unitupi', '$idpel', '$filename', '$lat', '$long', '$status')";
     $result = mysqli_query($conn, $query);
 
     if (!$result) {
