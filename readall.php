@@ -7,7 +7,7 @@ header('Content-type: application/json');
 $wo = $_GET['wo'];
 
 if ($wo) {
-  $wo = mysqli_query($conn, 'SELECT * FROM m_pemutusan_wo WHERE KODE_WO = "' . $wo . '"');
+  $wo = mysqli_query($conn, 'SELECT * FROM m_pemutusan_wo WHERE FLAG = "0" KODE_WO = "' . $wo . '"');
   while ($row_wo = mysqli_fetch_assoc($wo)) {
     $data_wo[] = $row_wo;
   }
