@@ -13,28 +13,28 @@ if ($wo != null) {
   }
 
   echo json_encode($data_wo);
-}
-
-// category
-$category = mysqli_query($conn, 'SELECT DISTINCT KDDK FROM m_pemutusan_wo');
-while ($row_cat = mysqli_fetch_assoc($category)) {
-  $cat[] = $row_cat;
-}
-
-function getData($c, $cat)
-{
-  $query = mysqli_query($c, 'SELECT * FROM m_pemutusan_wo WHERE FLAG = "0" AND KDDK = "' . $cat . '"');
-  while ($row = mysqli_fetch_assoc($query)) {
-    $result[] = $row;
+} else {
+  // category
+  $category = mysqli_query($conn, 'SELECT DISTINCT KDDK FROM m_pemutusan_wo');
+  while ($row_cat = mysqli_fetch_assoc($category)) {
+    $cat[] = $row_cat;
   }
-  if ($result < 1) {
-    return array();
+
+  function getData($c, $cat)
+  {
+    $query = mysqli_query($c, 'SELECT * FROM m_pemutusan_wo WHERE FLAG = "0" AND KDDK = "' . $cat . '"');
+    while ($row = mysqli_fetch_assoc($query)) {
+      $result[] = $row;
+    }
+    if ($result < 1) {
+      return array();
+    }
+    return $result;
   }
-  return $result;
-}
 
-for ($i = 0; $i < count($cat); $i++) {
-  $cat[$i]['DATA'] = getData($conn, $cat[$i]['KDDK']);
-}
+  for ($i = 0; $i < count($cat); $i++) {
+    $cat[$i]['DATA'] = getData($conn, $cat[$i]['KDDK']);
+  }
 
-echo json_encode($cat);
+  echo json_encode($cat);
+}
