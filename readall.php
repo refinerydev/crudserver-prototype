@@ -4,12 +4,12 @@ include 'conn.php';
 header('Access-Control-Allow-Origin:*');
 header('Content-type: application/json');
 
-$wo   = $_GET['wo'];
+$wo = $_GET['wo'];
 
-if ($wo != null) {
+if ($wo) {
   $wo = mysqli_query($conn, 'SELECT * FROM m_pemutusan_wo WHERE KODE_WO = "' . $wo . '"');
   while ($row_wo = mysqli_fetch_assoc($wo)) {
-    $data_wo[] = $data_wo;
+    $data_wo[] = $row_wo;
   }
 
   echo json_encode($data_wo);
