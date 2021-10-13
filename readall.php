@@ -13,7 +13,7 @@ if ($wo) {
   }
 
   if ($data_wo < 1) {
-    return array();
+    echo json_encode(array());
   }
 
   echo json_encode($data_wo);
