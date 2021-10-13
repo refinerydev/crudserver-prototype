@@ -14,9 +14,9 @@ if ($wo) {
 
   if ($data_wo < 1) {
     echo json_encode([]);
+  } else {
+    echo json_encode($data_wo);
   }
-
-  echo json_encode($data_wo);
 } else {
   // category
   $category = mysqli_query($conn, 'SELECT DISTINCT KDDK FROM m_pemutusan_wo');
